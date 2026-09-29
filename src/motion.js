@@ -129,18 +129,20 @@ function buildTextAndMask() {
       scrollTrigger: { trigger: row, start: 'top 96%', end: 'top 75%', scrub: true },
     });
   });
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '.mask-transition',
-      pin: !mobile,
-      start: mobile ? 'top bottom' : 'top top',
-      end: mobile ? 'bottom top' : '+=150%',
-      scrub: true,
-      anticipatePin: 1,
-    },
-  })
-    .fromTo('#mask-text', { scale: 1 }, { scale: mobile ? 6 : 15, transformOrigin: '50% 50%', duration: .82, ease: 'none' }, 0)
-    .to('.mask-curtain', { autoAlpha: 0, duration: .22, ease: 'none' }, .78);
+  if (!mobile) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.mask-transition',
+        pin: true,
+        start: 'top top',
+        end: '+=150%',
+        scrub: true,
+        anticipatePin: 1,
+      },
+    })
+      .fromTo('#mask-text', { scale: 1 }, { scale: 15, transformOrigin: '50% 50%', duration: .82, ease: 'none' }, 0)
+      .to('.mask-curtain', { autoAlpha: 0, duration: .22, ease: 'none' }, .78);
+  }
   gsap.fromTo('.contact-inner', { y: 90 }, {
     y: 0, ease: 'none',
     scrollTrigger: { trigger: '.contact-section', start: 'top bottom', end: 'top top', scrub: true },

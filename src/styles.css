@@ -290,8 +290,12 @@ body::after {
   .service-row h3 { font-size: clamp(28px, 7.5vw, 55px); }
   .service-index { font-size: 10px; }
   .service-arrow { font-size: 26px; }
+  .mask-transition, .mask-pin { height: 72svh; }
+  .mask-curtain { display: none; }
+  .mask-preview { padding: 0 5vw; }
+  .mask-preview strong { max-width: 100%; font-size: clamp(48px, 12vw, 86px); text-wrap: balance; }
   .start-section { min-height: 90svh; }
-  .start-copy h2 { font-size: clamp(67px, 17vw, 130px); }
+  .start-copy h2 { font-size: clamp(56px, 15vw, 115px); }
   .magnetic-cta { width: 100%; min-width: 0; padding: 15px 17px 15px 22px; font-size: 12px; }
   .cta-arrow { width: 40px; height: 40px; flex-basis: 40px; }
   .contact-heading { display: block; margin-bottom: 9vh; }
@@ -300,7 +304,7 @@ body::after {
   .contact-email { display: inline-block; max-width: 100%; overflow-wrap: anywhere; font-size: clamp(20px, 5vw, 32px); margin-bottom: 35px; }
   .social-links { flex-wrap: wrap; }
   .social-links a { padding: 14px 16px; font-size: 10px; }
-  .footer-wordmark { font-size: 18vw; }
+  .footer-wordmark { font-size: clamp(29px, 10.5vw, 78px); }
   .footer-bottom { font-size: 9px; }
   .shape-tile, .shape-curve, .shape-grid { display: none; }
 }
